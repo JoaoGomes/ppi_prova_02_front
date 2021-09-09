@@ -1,17 +1,21 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Home from '../pages/Home';
-import Create from '../pages/Create';
-import Update from '../pages/Update';
-import Delete from '../pages/Delete';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../pages/Home/index';
+import UserFormReducer from '../pages/Create/index';
+import FormUpdate from '../pages/Update/index';
+import FormDelete from '../pages/Delete/index';
 
 const OtherRoutes = () => {
     return (
         <BrowserRouter>
+        <div>
+            <Switch>
+            <Route path="/create" component={UserFormReducer}/>
+            <Route path="/update" component={FormUpdate}/>
+            <Route path="/delete" component={FormDelete}/>
             <Route path="/" component={Home} />
-            <Route path="/create" component={Create}/>
-            <Route path="/update" component={Update}/>
-            <Route path="/delete" component={Delete}/>
+            </Switch>
+        </div>
         </BrowserRouter>
     );
 };

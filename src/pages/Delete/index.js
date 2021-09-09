@@ -1,16 +1,25 @@
-import React from 'react';
+import React, {useReducer} from 'react';
 import Delete_city from '../../services/delete_city';
 
 
-function FormDelete () {
+const initialState = {
+    id: '',
+}
 
-    const id = '';
-    const [state, dispatch] = useReducer (reducer, id);
+function reducer (state, {field, value}){
+    return {
+        ...state, 
+        [field]: value
+    }
+}
+
+function FormDelete () {
+    const [state, dispatch] = useReducer (reducer, initialState);
     const onChange = (e) => {
         dispatch({field: e.target.name, value: e.target.value})
     }
 
-    const {nome, temp, temp_min, temp_max, humidade, status} = state;
+    const {id} = state;
 
     function handleSubmit (event) {
         event.preventDefault();
@@ -19,8 +28,8 @@ function FormDelete () {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label>NOME: 
-                <input  type='text' name='nome' value={nome} onChange={onChange} />
+            <label>Número da cidade: 
+                <input  type='number' name='id' value={id} onChange={onChange} />
             </label> <br/>
             <input type="submit" value="Enviar" className="btn btn-success"/>
         </form>
