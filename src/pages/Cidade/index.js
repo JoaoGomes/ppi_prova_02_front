@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-function Cidade(){
+function Cidade(nomeCidade){
 
     const [nome, setNome] = useState(null);
     const [temp, setTemp] = useState(null);
@@ -10,10 +10,9 @@ function Cidade(){
     const [humidade, setHumidade] = useState(null);
     const [status, setStatus] = useState(null);
 
-    async function handleSubmit(event) {
-        event.preventDefault();
+    async function handleSubmit() {
         try{
-            const response = await axios.get(`http://localhost:3333/cidades/1`);
+            const response = await axios.get(`http://localhost:3333/cidades/` + nomeCidade);
             if(response.data!=null){
                 console.log(response.data.id);
                 setNome(response.data.nome);
@@ -37,8 +36,11 @@ function Cidade(){
             <p>Temp. máx: {temp_max}</p>
             <p>Humidade: {humidade}</p>
             <p>Status: {status}</p>
+            <p>Nome da cidade: </p>
         </div>
     )
 }
 
 export default Cidade;
+
+//            <button onClick={handleSubmit}>Apertar</button>

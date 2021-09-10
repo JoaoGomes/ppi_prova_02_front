@@ -1,6 +1,6 @@
 import React, {useReducer} from 'react';
 import Delete_city from '../../services/delete_city';
-
+import { Link } from 'react-router-dom';
 
 const initialState = {
     id: '',
@@ -27,12 +27,15 @@ function FormDelete () {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label>Número da cidade: 
-                <input  type='number' name='id' value={id} onChange={onChange} />
-            </label> <br/>
-            <input type="submit" value="Enviar" className="btn btn-success"/>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label>Número da cidade: 
+                    <input  type='number' name='id' value={id} onChange={onChange} />
+                </label> <br/>
+                <input type="submit" value="Enviar" className="btn btn-success"/>
+            </form>
+            <button><Link to="/">Menu principal</Link></button>
+        </div>
     );
 };
 
