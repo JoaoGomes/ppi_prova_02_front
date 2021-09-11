@@ -3,7 +3,7 @@ import Delete_city from '../../services/delete_city';
 import { Link } from 'react-router-dom';
 
 const initialState = {
-    id: '',
+    nome: '',
 }
 
 function reducer (state, {field, value}){
@@ -19,18 +19,18 @@ function FormDelete () {
         dispatch({field: e.target.name, value: e.target.value})
     }
 
-    const {id} = state;
+    const {nome} = state;
 
     function handleSubmit (event) {
         event.preventDefault();
-        Delete_city(id);
+        Delete_city(nome);
     }
 
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label>Número da cidade: 
-                    <input  type='number' name='id' value={id} onChange={onChange} />
+                <label>Nome da cidade: 
+                    <input  type='text' name='nome' value={nome} onChange={onChange} />
                 </label> <br/>
                 <button type="submit" onClick={handleSubmit} className="btn btn-success">
                     <Link to="/">Enviar</Link>

@@ -11,8 +11,6 @@ const Main = () => {
     const [humidade, setHumidade] = useState(null);
     const [status, setStatus] = useState(null);
 
-    //const context = useAuth();
-
     const initialState = {
         nomeCidade: '',
     }

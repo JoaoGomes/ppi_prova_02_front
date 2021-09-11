@@ -1,9 +1,9 @@
 import axios from 'axios';
 
-function Update_city(data, id){
+function Update_city(data){
 
     axios({
-        url: 'http://localhost:3333/cidades/'+ id.id,
+        url: 'http://localhost:3333/cidades/' + data.nome,
         method: 'PUT',
         data: data
 

@@ -9,11 +9,6 @@ const initialState = {
     temp_max: '',
     humidade: '',
     status: '',
-    id: '',
-}
-
-const idState ={
-    id: ''
 }
 
 function reducer (state, {field, value}){
@@ -25,18 +20,15 @@ function reducer (state, {field, value}){
 
 function FormUpdate () {
     const [state, dispatch] = useReducer (reducer, initialState);
-    const [idTarget, dispatch2] = useReducer (reducer, idState);
     const onChange = (e) => {
         dispatch({field: e.target.name, value: e.target.value})
-        dispatch2({field: e.target.name, value: e.target.value})
     }
 
-    const {id} = idTarget;
     const {nome, temp, temp_min, temp_max, humidade, status} = state;
 
     function handleSubmit (event) {
         event.preventDefault();
-        Update_city(state, idTarget);
+        Update_city(state);
     }
 
     return (
@@ -53,10 +45,6 @@ function FormUpdate () {
                     <tbody>
                         <tr>
                             <th>
-                            <label>
-                                Id: 
-                                <input  type='number' name='id' value={id} onChange={onChange} />
-                            </label>
                             <label>
                                 NOME: 
                                 <input  type='text' name='nome' value={nome} onChange={onChange} />
