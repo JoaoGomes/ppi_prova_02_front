@@ -103,7 +103,9 @@ function FormUpdate () {
                     <tfoot>
                         <tr>
                             <th colSpan="1">
-                                <input type="submit" value="Enviar" className="btn btn-success"/>
+                                <button type="submit" onClick={handleSubmit} className="btn btn-success">
+                                    <Link to="/">Enviar</Link>
+                                </button>
                             </th>
                         </tr>
                     </tfoot>

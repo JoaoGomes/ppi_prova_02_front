@@ -3,23 +3,13 @@ import api from '../services/api';
 
 const AuthContext = createContext({});
 
+
 export const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
 
-    async function Login() {
-        const response = await api.post('/login', {
-            username: 'john',
-            password: 'password123admin',
-        });
-        console.log(response);
-
-        // Local Storage dos dados do usuário logado
-        localStorage.setItem('@App:user', JSON.stringify(response.data.user));
-        localStorage.setItem('@App:accessToken', response.data.accessToken);
-        
-        setUser(response.data.user);
-        api.defaults.headers.Authorization = `Bearer ${response.data.accessToken}`;
-
+    async function Login(data) {
+        setUser(localStorage.getItem('@App:user'));
+        api.defaults.headers.Authorization = `Bearer ${localStorage.getItem('@App:token')}`;
     }
 
     function Logout() {

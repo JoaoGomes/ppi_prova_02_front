@@ -16,6 +16,7 @@ const Home = () => {
             <button><Link to="/create">Adicionar cidade</Link></button><br/>
             <button><Link to="/update">Modificar tempo de uma cidade</Link></button><br/>
             <button><Link to="/delete">Deletar cidade</Link></button><br/>
+            <button><Link to ="/insert">Adicionar usuário</Link></button><br/>
             <button onClick={handleLogout}>Logout</button>
         </div>
     );

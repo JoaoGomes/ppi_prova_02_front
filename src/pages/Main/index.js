@@ -1,5 +1,4 @@
 import React, {useState, useReducer} from 'react';
-import { useAuth } from '../../contexts/auth';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
@@ -12,7 +11,7 @@ const Main = () => {
     const [humidade, setHumidade] = useState(null);
     const [status, setStatus] = useState(null);
 
-    const context = useAuth();
+    //const context = useAuth();
 
     const initialState = {
         nomeCidade: '',
@@ -32,10 +31,6 @@ const Main = () => {
 
     const {nomeCidade} = state;
 
-    function handleLogin() {
-        context.Login();
-    }
-
     async function handleSubmit(event){
         event.preventDefault();
         try{
@@ -43,7 +38,6 @@ const Main = () => {
             setNome(nomeCidade);
             const response = await axios.get(`http://localhost:3333/cidades/` + nome );
             if(response.data!=null){
-                console.log("Teste api " + response.data.nome);
                 setTemp(response.data.temp);
                 setTemp_min(response.data.temp_min);
                 setTemp_max(response.data.temp_min);

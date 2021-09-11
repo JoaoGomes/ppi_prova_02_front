@@ -32,7 +32,9 @@ function FormDelete () {
                 <label>Número da cidade: 
                     <input  type='number' name='id' value={id} onChange={onChange} />
                 </label> <br/>
-                <input type="submit" value="Enviar" className="btn btn-success"/>
+                <button type="submit" onClick={handleSubmit} className="btn btn-success">
+                    <Link to="/">Enviar</Link>
+                </button>
             </form>
             <button><Link to="/">Menu principal</Link></button>
         </div>

@@ -1,14 +1,11 @@
 import React, {useReducer} from 'react';
-import Create_city from '../../services/create_city';
+import Create_user from '../../services/create_user';
 import { Link } from 'react-router-dom';
 
 const initialState = {
     nome: '',
-    temp: '',
-    temp_min: '',
-    temp_max: '',
-    humidade: '',
-    status: '',
+    senha: '',
+    role: ''
 }
 
 function reducer (state, {field, value}){
@@ -18,18 +15,17 @@ function reducer (state, {field, value}){
     }
 }
 
-function UserFormReducer () {
+function FormInsert() {
     const [state, dispatch] = useReducer (reducer, initialState);
     const onChange = (e) => {
         dispatch({field: e.target.name, value: e.target.value})
     }
 
-    const {nome, temp, temp_min, temp_max, humidade, status} = state;
+    const {nome, senha, role} = state;
 
     function handleSubmit (event) {
         event.preventDefault();
-        console.log(state);
-        Create_city(state);
+        Create_user(state);
     }
 
     return (
@@ -39,7 +35,7 @@ function UserFormReducer () {
                     <thead>
                         <tr>
                             <th>
-                                REGISTRO DO TEMPO
+                                REGISTRO DE USUÁRIO
                             </th>
                         </tr>
                     </thead>
@@ -53,38 +49,16 @@ function UserFormReducer () {
                             </th>
                             <th colSpan="1">
                             <label>
-                                Temperatura:
-                                <input type='text' name='temp' value={temp} onChange={onChange} />
+                                SENHA:
+                                <input type='text' name='senha' value={senha} onChange={onChange} />
                             </label>
                             </th>
                         </tr>
                         <tr>
                             <th colSpan="1">
                             <label>
-                                Temperatura Mínima: 
-                                <input type='text' name='temp_min' value={temp_min} onChange={onChange} />
-                            </label>
-                            </th>
-                            <th colSpan="1">
-                            <label>
-                                Temperatura Máxima:
-                                <input type='text' name='temp_max' value={temp_max} onChange={onChange} />
-                            </label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th colSpan="1" >
-                            <label>
-                                Humidade:
-                                <input type='text' name='humidade' value={humidade} onChange={onChange} />
-                            </label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th colSpan="1">
-                            <label>
-                                Status:
-                                <input type='text' name='status' value={status} onChange={onChange} />
+                                Role: 
+                                <input type='text' name='role' value={role} onChange={onChange} />
                             </label>
                             </th>
                         </tr>
@@ -105,4 +79,4 @@ function UserFormReducer () {
     );
 };
 
-export default UserFormReducer;
+export default FormInsert;
