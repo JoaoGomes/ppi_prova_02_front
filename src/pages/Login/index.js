@@ -45,7 +45,7 @@ function FormLogin () {
                 </label> <br/>
                 <input type="submit" value="Login" className="btn btn-success"/>
             </form>
-            <button className="submitBtn"><Link to="/">Página inicial</Link></button>
+            <Link to="/" className="mainMenuBtn">Página inicial</Link>
         </div>
     );
 };

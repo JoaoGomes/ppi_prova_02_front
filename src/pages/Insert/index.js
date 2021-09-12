@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import Create_user from '../../services/create_user';
 import { Link } from 'react-router-dom';
-import './insert.css';
+import '../Create/create.css';
 
 const initialState = {
     nome: '',
@@ -30,52 +30,25 @@ function FormInsert() {
     }
 
     return (
-        <div className="form-box">
-            <form onSubmit={handleSubmit}>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>
-                                REGISTRO DE USUÁRIO
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <th>
-                            <label>
-                                NOME: 
-                                <input  type='text' name='nome' value={nome} onChange={onChange} />
-                            </label>
-                            </th>
-                            <th colSpan="1">
-                            <label>
-                                SENHA:
-                                <input type='text' name='senha' value={senha} onChange={onChange} />
-                            </label>
-                            </th>
-                        </tr>
-                        <tr>
-                            <th colSpan="1">
-                            <label>
-                                Role: 
-                                <input type='text' name='role' value={role} onChange={onChange} />
-                            </label>
-                            </th>
-                        </tr>
-                    </tbody>
-                    <tfoot>
-                        <tr>
-                            <th colSpan="1">
-                                <button type="submit" onClick={handleSubmit} className="btn btn-success">
-                                    <Link to="/">Enviar</Link>
-                                </button>
-                            </th>
-                        </tr>
-                    </tfoot>
-                </table>
+        <div>
+            <form onSubmit={handleSubmit} className="form-box">
+                <label className="form-title">
+                    REGISTRO DE USUÁRIO
+                </label>
+                <label>Nome: 
+                    <input  type='text' name='nome' value={nome} onChange={onChange} />
+                </label>
+                <label>Senha:
+                    <input type='text' name='senha' value={senha} onChange={onChange} />
+                </label>
+                <label>Role: 
+                    <input type='text' name='role' value={role} onChange={onChange} />
+                </label>
+                <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">
+                    Enviar
+                </Link>
             </form>
-            <button><Link to="/">Menu principal</Link></button>
+            <Link className="btn mainMenuBtn" to="/">Menu principal</Link>
         </div>
     );
 };

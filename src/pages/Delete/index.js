@@ -1,6 +1,7 @@
 import React, {useReducer} from 'react';
 import Delete_city from '../../services/delete_city';
 import { Link } from 'react-router-dom';
+import '../Create/create.css';
 
 const initialState = {
     nome: '',
@@ -28,15 +29,18 @@ function FormDelete () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit}>
-                <label>Nome da cidade: 
+            <form onSubmit={handleSubmit} className="form-box">
+                <label className="form-title">
+                REMOÇÃO DE CIDADE
+                </label>
+                <label>Nome: 
                     <input  type='text' name='nome' value={nome} onChange={onChange} />
-                </label> <br/>
-                <button type="submit" onClick={handleSubmit} className="btn btn-success">
-                    <Link to="/">Enviar</Link>
-                </button>
+                </label>
+                <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">
+                    Enviar
+                </Link>
             </form>
-            <button><Link to="/">Menu principal</Link></button>
+            <Link className="btn mainMenuBtn" to="/">Menu principal</Link>
         </div>
     );
 };

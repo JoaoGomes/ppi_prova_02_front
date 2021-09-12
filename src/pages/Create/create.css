@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box;
+    margin: 1%;
+    /*padding: 0px 10px 10px 10px;
+    /*background-color:lightblue;
+    border: 1px solid red;*/
+}
+
+.form-box{
+    background-color:lightblue;
+    border: 1px solid grey;
+    display: flex, inline-block;
+    height: 80%;
+    justify-content: center;
+    margin: 5px 25%;
+    min-width: 50%;
+    padding: 15px 15px 15px 15px; 
+}
+
+.form-box label{
+    display: block;
+    font-size: 20px;
+    margin: 0px 50px;
+    text-align: left;
+}
+
+.form-box .form-title{
+    color:darkblue;
+    font-size: 35px ;
+    margin: 0 0 10PX 0;
+    text-align: center;
+}
+
+.form-box input, textarea{
+    border:1;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 15px;
+    margin: 1px;
+    width: 100%;
+}
+
+.form-box .btn-success{
+    display: inline-block;
+    margin: 20px 0 0 0;
+}
+
+.btn {
+    background-color: grey;
+    border:1;
+    border-radius: 5px;
+    color: black;
+    display: block;
+    font-size: 20px;
+    padding: 5px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 100%;
+}
+
+.mainMenuBtn {
+    width: 50%;
+}
+
+.mainMenuBtn:hover, .btn-success:hover{
+    background-color: blue;
+    color: white;
+    transition: 0.5s ease;
+}
+
+.status{
+    background-color: white;
+    border: none;
+    border-color: grey;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
