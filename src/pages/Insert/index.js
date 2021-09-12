@@ -31,10 +31,10 @@ function FormInsert() {
 
     return (
         <div>
+            <form className="form-title">
+                REGISTRO DE USUÁRIO
+            </form>
             <form onSubmit={handleSubmit} className="form-box">
-                <label className="form-title">
-                    REGISTRO DE USUÁRIO
-                </label>
                 <label>Nome: 
                     <input  type='text' name='nome' value={nome} onChange={onChange} />
                 </label>
@@ -45,7 +45,7 @@ function FormInsert() {
                     <input type='text' name='role' value={role} onChange={onChange} />
                 </label>
                 <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">
-                    Enviar
+                    Registrar
                 </Link>
             </form>
             <Link className="btn mainMenuBtn" to="/">Menu principal</Link>

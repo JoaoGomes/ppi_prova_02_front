@@ -1,6 +1,7 @@
 import React, {useState, useReducer} from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './main.css';
 
 const Main = () => {
 
@@ -9,7 +10,7 @@ const Main = () => {
     const [temp_min, setTemp_min] = useState(null);
     const [temp_max, setTemp_max] = useState(null);
     const [humidade, setHumidade] = useState(null);
-    const [status, setStatus] = useState('sol');
+    const [status, setStatus] = useState('background');
 
     const initialState = {
         nomeCidade: '',
@@ -48,22 +49,29 @@ const Main = () => {
     }
 
     return (
-        <div>
-            <h1>Bem-vindo!</h1>
-            <button><Link to="/Login">Login</Link></button>
-            <h2>Escolha a cidade</h2>
-            <form onSubmit={handleSubmit}>
-                <input type = 'text' name = 'nomeCidade' value={nomeCidade} onChange={onChange} placeholder="Nome da cidade"/>
-                <input type="submit" value="Enviar" className="btn btn-success"/>
-            </form>
-            <h3>{nome}</h3>
-            <p>Temp. atual: {temp}</p>
-            <p>Temp. mín: {temp_min}</p>
-            <p>Temp. máx: {temp_max}</p>
-            <p>Humidade: {humidade}</p>
-            <p>Status: {status}</p>
+        <div className="main">
+            <Link className="btn-login" to="/Login">Login</Link>
+            <h1 className="title" >Bem-vindo!</h1> 
 
-            <img src={require(`../../images/` + status + '.png').default} alt="status"/>
+            <form onSubmit={handleSubmit} className="form-box-main">
+                <h2 className="text-h2" >Escolha a cidade</h2>
+                <input type = 'text' name = 'nomeCidade' value={nomeCidade} onChange={onChange} placeholder="Nome"/>
+                <Link type="submit" onClick={handleSubmit} className="btn-main btn-success" to="/">
+                    Enviar
+                </Link>
+            </form>
+            <form className="view-outside">
+                
+                <form className="view-outside">
+                <img className="image" src={require(`../../images/` + status + '.png').default} alt="status"/>
+                    <h3 className="city-title" >{nome}</h3>
+                    <p className="simple-text" >Temp. atual: {temp}</p>
+                    <p className="simple-text" >Temp. mín: {temp_min}</p>
+                    <p className="simple-text" >Temp. máx: {temp_max}</p>
+                    <p className="simple-text" >Humidade: {humidade}%</p>
+                    <p className="simple-text" >Status: {status}</p>
+                </form>                
+            </form>
         </div>
     );
 };

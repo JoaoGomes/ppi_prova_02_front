@@ -29,15 +29,15 @@ function FormDelete () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="form-box">
-                <label className="form-title">
+            <form className="form-title">
                 REMOÇÃO DE CIDADE
-                </label>
+            </form>
+            <form onSubmit={handleSubmit} className="form-box">
                 <label>Nome: 
                     <input  type='text' name='nome' value={nome} onChange={onChange} />
                 </label>
                 <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">
-                    Enviar
+                    Deletar
                 </Link>
             </form>
             <Link className="btn mainMenuBtn" to="/">Menu principal</Link>

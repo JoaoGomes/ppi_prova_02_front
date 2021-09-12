@@ -1,6 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../contexts/auth';
 import { Link } from 'react-router-dom';
+import '../Create/create.css';
 
 const Home = () => {
     const { Logout } = useAuth();
@@ -12,12 +13,15 @@ const Home = () => {
 
     return (
         <div>
-            <h1>Bem-vindo, {user}!</h1>
-            <button><Link to="/create">Adicionar cidade</Link></button><br/>
-            <button><Link to="/update">Modificar tempo de uma cidade</Link></button><br/>
-            <button><Link to="/delete">Deletar cidade</Link></button><br/>
-            <button><Link to ="/insert">Adicionar usuário</Link></button><br/>
-            <button onClick={handleLogout}>Logout</button>
+            <label className="form-title-home">Bem-vindo, {user}!</label>
+
+            <form className="form-box">
+                <label><Link className="btn btn-success" to="/create">Adicionar cidade</Link></label>
+                <label><Link className="btn btn-success" to="/update">Modificar tempo de uma cidade</Link></label>
+                <label><Link className="btn btn-success" to="/delete">Deletar cidade</Link></label>
+                <label><Link className="btn btn-success" to ="/insert">Adicionar usuário</Link></label>
+            </form>
+            <label className="btn mainMenuBtn" onClick={handleLogout}>Logout</label>
         </div>
     );
 };

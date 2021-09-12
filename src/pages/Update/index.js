@@ -34,10 +34,10 @@ function FormUpdate () {
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className="form-box">
-                <label className="form-title">
+            <form className="form-title">
                     REGISTRO DO TEMPO 
-                </label>
+            </form>
+            <form onSubmit={handleSubmit} className="form-box">
                 <label>
                     Nome: 
                     <input  type='text' name='nome' value={nome} onChange={onChange} />
