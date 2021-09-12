@@ -60,10 +60,13 @@ function FormUpdate () {
                 </label>
                 <label >Status: 
                     <select className="status" name='status' value={status} onChange={onChange}>
-                        <option value="Ensolarado">Ensolarado</option>
-                        <option value="Chovendo">Chovendo</option>
+                        <option value="Sol">Sol</option>
+                        <option value="Parcialmente Nublado">Parcialmente Nublado</option>
                         <option value="Nublado">Nublado</option>
+                        <option value="Chovendo">Chovendo</option>
                         <option value="Nevando">Nevando</option>
+                        <option value="Tempestade">Tempestade</option>
+
                     </select>
                 </label>
                 <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">

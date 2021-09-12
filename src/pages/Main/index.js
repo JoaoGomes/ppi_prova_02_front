@@ -10,7 +10,7 @@ const Main = () => {
     const [temp_min, setTemp_min] = useState(null);
     const [temp_max, setTemp_max] = useState(null);
     const [humidade, setHumidade] = useState(null);
-    const [status, setStatus] = useState('background');
+    const [status, setStatus] = useState('blank');
 
     const initialState = {
         nomeCidade: '',
