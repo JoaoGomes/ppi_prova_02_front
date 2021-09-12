@@ -1,6 +1,6 @@
-import React, {useReducer} from 'react';
-import Create_city from '../../services/create_city';
+import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
+import Create_city from '../../services/create_city';
 
 const initialState = {
     nome: '',
@@ -20,6 +20,7 @@ function reducer (state, {field, value}){
 
 function UserFormReducer () {
     const [state, dispatch] = useReducer (reducer, initialState);
+    
     const onChange = (e) => {
         dispatch({field: e.target.name, value: e.target.value})
     }
@@ -81,11 +82,15 @@ function UserFormReducer () {
                             </th>
                         </tr>
                         <tr>
-                            <th colSpan="1">
-                            <label>
-                                Status:
-                                <input type='text' name='status' value={status} onChange={onChange} />
-                            </label>
+                            <th>
+                                <label>Status: 
+                                    <select name='status' value={status} onChange={onChange}>
+                                        <option value="Ensolarado">Ensolarado</option>
+                                        <option value="Chovendo">Chovendo</option>
+                                        <option value="Nublado">Nublado</option>
+                                        <option value="Nevando">Nevando</option>
+                                    </select>
+                                </label>
                             </th>
                         </tr>
                     </tbody>

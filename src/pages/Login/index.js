@@ -2,6 +2,7 @@ import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/auth';
 import Access_user from '../../services/access';
+import './login.css';
 
 const initialState = {
     username: '',
@@ -33,8 +34,8 @@ function FormLogin () {
     }
 
     return (
-        <div>
-            <h1>Login</h1>
+        <div className="form-box">
+            <h1 className="form-title">Login</h1>
             <form onSubmit={handleSubmit}>
                 <label>Nome
                     <input  type='text' name='username' value={username} onChange={onChange} />
@@ -44,7 +45,7 @@ function FormLogin () {
                 </label> <br/>
                 <input type="submit" value="Login" className="btn btn-success"/>
             </form>
-            <button><Link to="/">Página inicial</Link></button>
+            <button className="submitBtn"><Link to="/">Página inicial</Link></button>
         </div>
     );
 };

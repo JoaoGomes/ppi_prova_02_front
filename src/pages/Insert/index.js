@@ -1,6 +1,7 @@
 import React, {useReducer} from 'react';
 import Create_user from '../../services/create_user';
 import { Link } from 'react-router-dom';
+import './insert.css';
 
 const initialState = {
     nome: '',
@@ -29,7 +30,7 @@ function FormInsert() {
     }
 
     return (
-        <div>
+        <div className="form-box">
             <form onSubmit={handleSubmit}>
                 <table>
                     <thead>

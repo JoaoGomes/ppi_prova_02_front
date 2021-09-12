@@ -9,7 +9,7 @@ const Main = () => {
     const [temp_min, setTemp_min] = useState(null);
     const [temp_max, setTemp_max] = useState(null);
     const [humidade, setHumidade] = useState(null);
-    const [status, setStatus] = useState(null);
+    const [status, setStatus] = useState('sol');
 
     const initialState = {
         nomeCidade: '',
@@ -62,6 +62,8 @@ const Main = () => {
             <p>Temp. máx: {temp_max}</p>
             <p>Humidade: {humidade}</p>
             <p>Status: {status}</p>
+
+            <img src={require(`../../images/` + status + '.png').default} alt="status"/>
         </div>
     );
 };

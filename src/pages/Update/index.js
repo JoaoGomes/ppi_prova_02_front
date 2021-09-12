@@ -80,11 +80,15 @@ function FormUpdate () {
                             </th>
                         </tr>
                         <tr>
-                            <th colSpan="1">
-                            <label>
-                                Status:
-                                <input type='text' name='status' value={status} onChange={onChange} />
-                            </label>
+                            <th>
+                                <label>Status: 
+                                    <select name='status' value={status} onChange={onChange}>
+                                        <option value="Ensolarado">Ensolarado</option>
+                                        <option value="Chovendo">Chovendo</option>
+                                        <option value="Nublado">Nublado</option>
+                                        <option value="Nevando">Nevando</option>
+                                    </select>
+                                </label>
                             </th>
                         </tr>
                     </tbody>
