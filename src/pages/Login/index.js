@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../contexts/auth';
 import Access_user from '../../services/access';
-import '../Create/create.css';
+import '../Home/home.css';
 
 const initialState = {
     username: '',

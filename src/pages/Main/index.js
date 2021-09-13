@@ -51,7 +51,7 @@ const Main = () => {
     return (
         <div className="main">
             <Link className="btn-login" to="/Login">Login</Link>
-            <h1 className="title" >Bem-vindo!</h1> 
+            <h1 className="title" >Bem-vindo ao ClimaTempo!</h1> 
 
             <form onSubmit={handleSubmit} className="form-box-main">
                 <h2 className="text-h2" >Escolha a cidade</h2>

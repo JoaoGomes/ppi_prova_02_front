@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import Update_city from '../../services/update_city';
 import { Link } from 'react-router-dom';
-import '../Create/create.css';
+import '../Home/home.css';
 
 const initialState = {
     nome: '',

@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import Delete_city from '../../services/delete_city';
 import { Link } from 'react-router-dom';
-import '../Create/create.css';
+import '../Home/home.css';
 
 const initialState = {
     nome: '',
@@ -36,7 +36,7 @@ function FormDelete () {
                 <label>Nome: 
                     <input  type='text' name='nome' value={nome} onChange={onChange} />
                 </label>
-                <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">
+                <Link type="submit" onClick={handleSubmit} className="btn btn-success" push to="/">
                     Deletar
                 </Link>
             </form>

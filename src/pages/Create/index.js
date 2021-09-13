@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Create_city from '../../services/create_city';
-import './create.css';
+import '../Home/home.css';
 
 const initialState = {
     nome: '',
@@ -32,6 +32,7 @@ function UserFormReducer () {
         event.preventDefault();
         console.log(state);
         Create_city(state);
+        <Redirect push to="/"/>
     }
 
     return (
@@ -70,11 +71,13 @@ function UserFormReducer () {
                         <option value="Tempestade">Tempestade</option>
                     </select>
                 </label>
-                <Link type="submit" onClick={handleSubmit} className="btn btn-success" to="/">
+
+                <Link push to="/" className="btn btn-success" type="submit" onClick={handleSubmit} >
                     Adicionar
                 </Link>
+
             </form>
-            <Link className="btn mainMenuBtn" to="/">Menu principal</Link>
+            <Link to="/" className="btn mainMenuBtn" >Menu principal</Link>
         </div>
     );
 };
