@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import Create_user from '../../services/create_user';
 import { Link } from 'react-router-dom';
-import '../Create/create.css';
+import '../Home/home.css';
 
 const initialState = {
     nome: '',

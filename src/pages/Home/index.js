@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuth } from '../../contexts/auth';
 import { Link } from 'react-router-dom';
-import '../Create/create.css';
+import '../Home/home.css';
 
 const Home = () => {
     const { Logout } = useAuth();
